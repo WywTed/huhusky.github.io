@@ -1,2 +1,2 @@
-# huhusky.github.io
-huhusky personal blog
+# huhu-sky.github.io
+huhu-sky personal blog
