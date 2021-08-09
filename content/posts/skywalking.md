@@ -10,7 +10,7 @@ tags:
 
 #### test
 
-![skywalking-cluster](images/skywalking/skywalking-images-1.png)
+![skywalking-cluster](skywalking-images-1.png)
 
 ## test
 
