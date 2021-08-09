@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://huhu-sky.github.io/blog/</loc>
+    <loc>/blog/</loc>
   </url><url>
-    <loc>http://huhu-sky.github.io/</loc>
+    <loc>/</loc>
   </url><url>
-    <loc>http://huhu-sky.github.io/series/</loc>
+    <loc>/series/</loc>
   </url><url>
-    <loc>http://huhu-sky.github.io/tags/</loc>
+    <loc>/tags/</loc>
   </url>
 </urlset>
