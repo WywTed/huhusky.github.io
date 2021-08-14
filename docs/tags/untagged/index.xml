@@ -14,7 +14,10 @@
       <pubDate>Mon, 09 Aug 2021 13:52:36 +0800</pubDate>
       
       <guid>/posts/skywalking/</guid>
-      <description>test test </description>
+      <description>Service: 功能的具体实现 空 接口
+ModuleServiceHolder: 管理某个模块实现的类 registerServiceImplementation(Class&amp;lt;? extends Service&amp;gt; serviceType, Service service): 注册 服务，（一个模块中，可能有多个实现） T getService(ClassserviceType)： 获取实现服务
+ModuleProvider: 模块提供者管理，是 ModuleServiceHolder 的抽象实现 持有 ModuleDefine 和 ModuleManager 的引用 管理 Service 的 Map: Map&amp;lt;Class&amp;lt;? extends Service&amp;gt;, Service&amp;gt; services; 当执行 registerServiceImplementation 时，即往该 map 中添加记录
+抽象方法： Class&amp;lt;? extends ModuleDefine&amp;gt; module()： 获取所属模块的 class ModuleConfig createConfigBeanIfAbsent()： 创建 模块配置 prepare()： 准备动作： In prepare stage, the moduleDefine should initialize things which are irrelative other modules. start()： 开始动作：In start stage, the moduleDefine has been ready for interop.</description>
     </item>
     
   </channel>
