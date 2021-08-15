@@ -141,8 +141,7 @@
       
 
       <div class="post-content">
-        <p><img src="../skywalking/skywalking-2.png" alt="provider sequence"></p>
-<h2 id="服务端启动流程">服务端启动流程</h2>
+        <h2 id="服务端启动流程">服务端启动流程</h2>
 <h3 id="启动入口">启动入口</h3>
 <ul>
 <li>apm-dist apm-dist-es7 中表示发布时使用哪个启动类，对应启动的为 oap-server/server-starter  oap-server/server-starter-es7, 实际最终都是以 opa-server/server-bootstrap 模块启动： <code>OAPServerBootstrap#start()</code></li>
@@ -238,7 +237,8 @@ JVMModuleProvider               JVMModule
 MeterReceiverProvider           MeterReceiverModule
 LogAnalyzerModuleProvider       LogAnalyzerModule
 LogModuleProvider               LogModule
-</code></pre>
+</code></pre><p><img src="../skywalking/skywalking-2.png" alt="provider sequence"></p>
+
       </div>
     </article>
 

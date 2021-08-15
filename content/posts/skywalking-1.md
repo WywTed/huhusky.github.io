@@ -9,7 +9,6 @@ tags:
   - apm
 ---
 
-![provider sequence](../skywalking/skywalking-2.png)
 ## 服务端启动流程
 ### 启动入口
   * apm-dist apm-dist-es7 中表示发布时使用哪个启动类，对应启动的为 oap-server/server-starter  oap-server/server-starter-es7, 实际最终都是以 opa-server/server-bootstrap 模块启动： `OAPServerBootstrap#start()`
@@ -80,3 +79,4 @@ MeterReceiverProvider           MeterReceiverModule
 LogAnalyzerModuleProvider       LogAnalyzerModule
 LogModuleProvider               LogModule
 ```
+![provider sequence](../skywalking/skywalking-2.png)

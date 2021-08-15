@@ -9,6 +9,7 @@ tags:
   - apm
 ---
 
+![skywalking-module-diagram](../skywalking/skywalking-module-diagram.png)
 ## 简述
 #### Service:  功能的具体实现; 空接口
 
@@ -58,8 +59,6 @@ tags:
     + ProviderConfiguration: 模块提供者的配置，持有 Properties 对象的引用，表示该 provider 的配置，最终都转化为 Properties 对象
     
 #### BootstrapFlow: 启动流程
-
-![skywalking-module-diagram](../skywalking/skywalking-module-diagram.png)
 
 ## 简述总结
 skywalking 分模块管理，有多个模块，默认启动 23 个，每个 module 都有一个 provider， 每个 provider 可以注册多个 Service, 而 Service 可以理解为 具体功能的实现； 与 Provider 一起工作；

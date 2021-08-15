@@ -141,7 +141,8 @@
       
 
       <div class="post-content">
-        <h2 id="简述">简述</h2>
+        <p><img src="../skywalking/skywalking-module-diagram.png" alt="skywalking-module-diagram"></p>
+<h2 id="简述">简述</h2>
 <h4 id="service--功能的具体实现-空接口">Service:  功能的具体实现; 空接口</h4>
 <h4 id="moduleserviceholder-管理某个模块实现的类">ModuleServiceHolder: 管理某个模块实现的类</h4>
 <ul>
@@ -206,7 +207,6 @@ module 的 prepare 阶段， 找到所有的 providers 并且让他们执行 pre
 </li>
 </ul>
 <h4 id="bootstrapflow-启动流程">BootstrapFlow: 启动流程</h4>
-<p><img src="../skywalking/skywalking-module-diagram.png" alt="skywalking-module-diagram"></p>
 <h2 id="简述总结">简述总结</h2>
 <p>skywalking 分模块管理，有多个模块，默认启动 23 个，每个 module 都有一个 provider， 每个 provider 可以注册多个 Service, 而 Service 可以理解为 具体功能的实现； 与 Provider 一起工作；</p>
 
