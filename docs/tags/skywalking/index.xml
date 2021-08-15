@@ -9,15 +9,60 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Mon, 09 Aug 2021 13:52:36 +0800</lastBuildDate><atom:link href="/tags/skywalking/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Skywalking</title>
+      <title>Skywalking 系列文章</title>
+      <link>/about/skywalking/</link>
+      <pubDate>Mon, 09 Aug 2021 13:52:36 +0800</pubDate>
+      
+      <guid>/about/skywalking/</guid>
+      <description>skywalking 系列文章 底层接口简述 启动过程简述 各个 module 的 provider 简述 </description>
+    </item>
+    
+    <item>
+      <title>Skywalking 系列文章</title>
       <link>/posts/skywalking/</link>
       <pubDate>Mon, 09 Aug 2021 13:52:36 +0800</pubDate>
       
       <guid>/posts/skywalking/</guid>
-      <description>Service: 功能的具体实现 空 接口
-ModuleServiceHolder: 管理某个模块实现的类 registerServiceImplementation(Class&amp;lt;? extends Service&amp;gt; serviceType, Service service): 注册 服务，（一个模块中，可能有多个实现） T getService(ClassserviceType)： 获取实现服务
-ModuleProvider: 模块提供者管理，是 ModuleServiceHolder 的抽象实现 持有 ModuleDefine 和 ModuleManager 的引用 管理 Service 的 Map: Map&amp;lt;Class&amp;lt;? extends Service&amp;gt;, Service&amp;gt; services; 当执行 registerServiceImplementation 时，即往该 map 中添加记录
-抽象方法： Class&amp;lt;? extends ModuleDefine&amp;gt; module()： 获取所属模块的 class ModuleConfig createConfigBeanIfAbsent()： 创建 模块配置 prepare()： 准备动作： In prepare stage, the moduleDefine should initialize things which are irrelative other modules. start()： 开始动作：In start stage, the moduleDefine has been ready for interop.</description>
+      <description>skywalking 系列文章 底层接口简述 启动过程简述 各个 module 的 provider 简述 </description>
+    </item>
+    
+    <item>
+      <title>Skywalking 系列文章</title>
+      <link>/system/</link>
+      <pubDate>Mon, 09 Aug 2021 13:52:36 +0800</pubDate>
+      
+      <guid>/system/</guid>
+      <description>skywalking 系列文章 底层接口简述 启动过程简述 各个 module 的 provider 简述 </description>
+    </item>
+    
+    <item>
+      <title>Skywalking-0 底层接口简述</title>
+      <link>/posts/skywalking-0/</link>
+      <pubDate>Mon, 09 Aug 2021 13:52:36 +0800</pubDate>
+      
+      <guid>/posts/skywalking-0/</guid>
+      <description>简述 Service: 功能的具体实现; 空接口 ModuleServiceHolder: 管理某个模块实现的类  registerServiceImplementation(Class&amp;lt;? extends Service&amp;gt; serviceType, Service service) 注册 服务，（一个模块中，可能有多个实现） &amp;lt;T extends Service&amp;gt; T getService(Class&amp;lt;T&amp;gt; serviceType) 获取实现服务  ModuleProvider: 模块提供者管理，是 ModuleServiceHolder 的抽象实现  持有 ModuleDefine 和 ModuleManager 的引用 管理 Service 的 Map: Map&amp;lt;Class&amp;lt;? extends Service&amp;gt;, Service&amp;gt; services; 当执行 registerServiceImplementation 时，即往该 map 中添加记录 抽象方法：  Class&amp;lt;? extends ModuleDefine&amp;gt; module() 获取所属模块的 class ModuleConfig createConfigBeanIfAbsent()： 创建 模块配置 prepare()： 准备动作： In prepare stage, the moduleDefine should initialize things which are irrelative other modules.</description>
+    </item>
+    
+    <item>
+      <title>Skywalking-1 服务端启动流程简述</title>
+      <link>/posts/skywalking-1/</link>
+      <pubDate>Mon, 09 Aug 2021 13:52:36 +0800</pubDate>
+      
+      <guid>/posts/skywalking-1/</guid>
+      <description>服务端启动流程 启动入口  apm-dist apm-dist-es7 中表示发布时使用哪个启动类，对应启动的为 oap-server/server-starter oap-server/server-starter-es7, 实际最终都是以 opa-server/server-bootstrap 模块启动： OAPServerBootstrap#start()  启动方法点： OAPServerBootstrap.start()  获取启动模式： 通过系统属性 -Dmode= 来获取，并且设置启动模式  init: 做所有初始化的事情，然后程序退出 no-init: 正常启动，不需要做存储层初始化（比如 es 存储的话就创建索引，索引模板等； mysql 的话就创建表结构等）   构造配置加载类， ApplicationConfigLoader， 构造模块管理器 ModuleManager, 在这个地方， ApplicationConfigLoader 实现于 ConfigLoader, 其中 T 的具体类型为 ApplicationConfiguration， 其中定义 load 方法，表示如何加载配置文件得到 T，   2.1 使用 configLoader.load() 加载获取配置类 ApplicationConfiguration, 下面是具体的加载逻辑：  2.1.1 构造空的 ApplicationConfiguration 实例， 执行 loadConfig（configuration） 对该实例填充内容 2.1.2 读取 applicaition.yml 文件， 使用 yml 工具转换成 Map&amp;lt;String, Map&amp;lt;String, Object&amp;gt;&amp;gt; 对象， 其中， application.</description>
+    </item>
+    
+    <item>
+      <title>Skywalking-2 服务端各 moduleProvider 启动简述</title>
+      <link>/posts/skywalking-2/</link>
+      <pubDate>Mon, 09 Aug 2021 13:52:36 +0800</pubDate>
+      
+      <guid>/posts/skywalking-2/</guid>
+      <description>各 Module 的 Provider 流程  以下针对所有的 provider 依次展开分析
+ module sequence: NoneConfigurationProvider(ConfigurationModule) -&amp;gt; GraphQLQueryProvider(QueryModule) -&amp;gt; NoneTelemetryProvider(TelemetryModule) -&amp;gt; CoreModuleProvider(CoreModule) -&amp;gt; SharingServerModuleProvider(SharingServerModule) -&amp;gt; ProfileModuleProvider(ProfileModule) -&amp;gt; AnalyzerModuleProvider(AnalyzerModule) -&amp;gt; MeshReceiverProvider(MeshReceiverModule) -&amp;gt; AlarmModuleProvider(AlarmModule) -&amp;gt; ConfigurationDiscoveryProvider(ConfigurationDiscoveryModule) -&amp;gt; RegisterModuleProvider(RegisterModule) -&amp;gt; BrowserModuleProvider(BrowserModule) -&amp;gt; ClusterModuleNacosProvider(ClusterModule) -&amp;gt; CLRModuleProvider(CLRModule) -&amp;gt; EventAnalyzerModuleProvider(EventAnalyzerModule) -&amp;gt; EventModuleProvider(EventModule) -&amp;gt; MysqlStorageProvider(StorageModule) -&amp;gt; TraceModuleProvider(TraceModule) -&amp;gt; EnvoyMetricReceiverProvider(EnvoyMetricReceiverModule) -&amp;gt; JVMModuleProvider(JVMModule) -&amp;gt; MeterReceiverProvider(MeterReceiverModule) -&amp;gt; LogAnalyzerModuleProvider(LogAnalyzerModule) -&amp;gt; LogModuleProvider(LogModule)  NoneConfigurationProvider: prepare: // do nothing
+start: // do nothing
+notifyAfterCompleted: // do nothing</description>
     </item>
     
   </channel>

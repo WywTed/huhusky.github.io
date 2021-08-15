@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/about/</loc>
+    <lastmod>2021-08-09T13:52:36+08:00</lastmod>
+  </url><url>
     <loc>/tags/apm/</loc>
     <lastmod>2021-08-09T13:52:36+08:00</lastmod>
   </url><url>
@@ -11,10 +14,25 @@
     <loc>/posts/</loc>
     <lastmod>2021-08-09T13:52:36+08:00</lastmod>
   </url><url>
+    <loc>/tags/skywalking/</loc>
+    <lastmod>2021-08-09T13:52:36+08:00</lastmod>
+  </url><url>
+    <loc>/about/skywalking/</loc>
+    <lastmod>2021-08-09T13:52:36+08:00</lastmod>
+  </url><url>
     <loc>/posts/skywalking/</loc>
     <lastmod>2021-08-09T13:52:36+08:00</lastmod>
   </url><url>
-    <loc>/tags/skywalking/</loc>
+    <loc>/system/</loc>
+    <lastmod>2021-08-09T13:52:36+08:00</lastmod>
+  </url><url>
+    <loc>/posts/skywalking-0/</loc>
+    <lastmod>2021-08-09T13:52:36+08:00</lastmod>
+  </url><url>
+    <loc>/posts/skywalking-1/</loc>
+    <lastmod>2021-08-09T13:52:36+08:00</lastmod>
+  </url><url>
+    <loc>/posts/skywalking-2/</loc>
     <lastmod>2021-08-09T13:52:36+08:00</lastmod>
   </url><url>
     <loc>/tags/</loc>
